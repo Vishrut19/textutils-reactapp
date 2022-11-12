@@ -9,10 +9,11 @@ function Alert(props) {
     }
 
   return (
-    // This is the syntax of react.
-    // Agar props.alert null hai toh div tag ka part return nhi hoga.
-    // and agar props.alert null nhi hai toh div tag return hoga.
-    props.alert && <>
+    <div style={{height:'40px'}}>
+    {/* This is the syntax of react.
+        Agar props.alert null hai toh div tag ka part return nhi hoga.
+        and agar props.alert null nhi hai toh div tag return hoga. */}
+    {props.alert && <>
        <div
         className={`alert alert-${props.alert.type} alert-dismissible fade show`}
         role="alert"
@@ -20,7 +21,8 @@ function Alert(props) {
         <strong>{capitalize(props.alert.type)}</strong>:
         {props.alert.msg}
       </div>
-    </>
+    </>}
+    </div>
   );
 }
 

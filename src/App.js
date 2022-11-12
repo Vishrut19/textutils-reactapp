@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import TextForm from "./components/TextForm";
-// import About from "./components/About";
+import About from "./components/About";
 import Alert from "./components/Alert";
 // import {
 //   BrowserRouter as Router,
@@ -58,6 +58,7 @@ function App() {
             {/* <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text that you want to analyze below" mode={mode}/>}/> */}
             <TextForm showAlert={showAlert} heading="Enter the text that you want to analyze below" mode={mode}/>
           {/* </Routes> */}
+          {/* <About mode={mode}/> */}
         </div>
       {/* </Router> */}
     </>

@@ -41,20 +41,20 @@ export default function TextForm(props) {
             onChange={handleOnChange}
             rows="8"
             placeholder="Enter text here"
-            style={{backgroundColor:props.mode === 'dark' ? 'grey' : 'white',color:props.mode === 'dark' ? 'white' : '#042743'}}
+            style={{backgroundColor:props.mode === 'dark' ? '#13466e' : 'white',color:props.mode === 'dark' ? 'white' : '#042743'}}
           >
           </textarea>
         </div>
-        <button className="btn btn-primary my-3" onClick={handleUpClick}>Convert to Uppercase</button>
-        <button className="btn btn-primary my-3 mx-3" onClick={handleDownClick}>Convert to Lowercase</button>
-        <button className="btn btn-primary my-3 mx-3" onClick={handleReplace}>Replace A with Z</button>
+        <button disabled={text.length===0}  className="btn btn-primary my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+        <button disabled={text.length===0} className="btn btn-primary my-1 mx-1" onClick={handleDownClick}>Convert to Lowercase</button>
+        <button disabled={text.length===0} className="btn btn-primary my-1 mx-1" onClick={handleReplace}>Replace A with Z</button>
         </div>
         <div className="container my-2" style={{color:props.mode === 'dark' ? 'white' : '#042743'}}>
           <h1>Your text summary</h1>
-          <p>{text.split(" ").length} words and {text.length} characters</p>
-          <p>{0.008 * text.split(" ").length} Minutes Taken To Read A Word</p>
+          <p>{text.split(" ").filter((element) => {return element.length!==0}).length} words and {text.length} characters</p>
+          <p>{0.008 * text.split(" ").filter((element)=> {return element.length !== 0}).length} Minutes Taken To Read A Word</p>
           <h2>Preview</h2>
-          <p><strong>{text.length > 0 ? text : "Enter something in the text area above to preview it here"}</strong></p>
+          <p><strong>{text.length > 0 ? text : "Nothing to Preview"}</strong></p>
         </div>
     </>
   );
